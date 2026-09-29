@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Install — Canora</title>
+<meta name="description" content="Download Canora for Windows and Android. System requirements, installation guide, and first-time MIDI setup.">
+<link rel="icon" href="app.ico">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-teal">
+
+<header class="site-header">
+  <img class="logo-mark" src="img/canora-mark.svg" alt="Canora">
+  <a class="site-title" href="index.html">Canora <span>— for gigging keyboardists</span></a>
+  <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="install.html" class="active">Install</a>
+    <a href="demo.html">Demo</a>
+    <a href="editions.html">Editions</a>
+    <a href="support.html">Support</a>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <p class="eyebrow">Install</p>
+  <h1>Get the app.</h1>
+  <p class="lead">No installer wizard, no account, no internet required on
+  stage. Download, plug your keyboard in over USB, and play.</p>
+</div>
+
+<main class="content">
+
+  <section>
+    <h2>Downloads</h2>
+
+    <div class="dl-card">
+      <div class="dl-info">
+        <span class="badge badge--live">Available now</span>
+        <h3>⊞ Windows — one-file</h3>
+        <p>A single <code>Canora.exe</code>. Double-click to run — easiest
+        to copy around. First launch takes a few seconds (it unpacks to a temp
+        folder); after that it's fast.</p>
+      </div>
+      <a class="btn" href="https://github.com/2025eb1100268-tech/modx-manager/releases/download/v1.9.0/Canora-1.9.0-win64.exe">Download .exe</a>
+    </div>
+
+    <div class="dl-card">
+      <div class="dl-info">
+        <span class="badge badge--live">Available now</span>
+        <h3>⊞ Windows — one-folder</h3>
+        <p>A zip containing <code>Canora.exe</code> plus an
+        <code>_internal/</code> folder. Launches instantly — the best choice
+        for the laptop that lives on your keyboard stand. Keep the folder together.</p>
+      </div>
+      <a class="btn" href="https://github.com/2025eb1100268-tech/modx-manager/releases/download/v1.9.0/Canora-1.9.0-win64-folder.zip">Download .zip</a>
+    </div>
+
+    <div class="dl-card">
+      <div class="dl-info">
+        <span class="badge badge--live">Available now</span>
+        <h3>▲ Android tablet / phone</h3>
+        <p>Direct APK download — Android 7.0 or newer. Connect your keyboard
+        with a USB-OTG adapter. Includes the full feature set: library,
+        setlists, gig mode, page-turner pedals, and desktop library import.</p>
+      </div>
+      <a class="btn" href="https://github.com/2025eb1100268-tech/modx-mobile/releases/download/v2.2.0/Canora-2.2.0.apk">Download .apk</a>
+    </div>
+
+    <div class="dl-card">
+      <div class="dl-info">
+        <span class="badge badge--soon">Coming soon</span>
+        <h3>◷ iPad / iOS</h3>
+        <p>In progress — the iPad build is coming to the App Store. Want to
+        know when it lands? <a href="support.html#contact">Drop us a line</a>
+        and we'll email you at launch.</p>
+      </div>
+      <a class="btn btn--ghost" href="support.html#contact">Notify me</a>
+    </div>
+
+    <div class="note">
+      <strong>Windows SmartScreen:</strong> the first time you run the app,
+      Windows may show an "unrecognized app" warning — that's normal for a
+      small independent app. Click <em>More info → Run anyway</em>. The app is
+      fully offline and touches nothing outside its own settings folder.
+    </div>
+  </section>
+
+  <section>
+    <h2>System requirements</h2>
+    <div class="tbl-wrap">
+    <table class="tbl">
+      <tr><th>Platform</th><th>Requirement</th></tr>
+      <tr><td>Windows</td><td>Windows 10/11, 64-bit. Runs great on older, low-RAM laptops — that's what it was built for. No Python or other software needed.</td></tr>
+      <tr><td>Android</td><td>Android 7.0 (API 24) or newer; USB-OTG for MIDI.</td></tr>
+      <tr><td>Keyboard</td><td>Yamaha MODX / MODX+ / Montage fully verified. Any keyboard that accepts Program Change works via the generic profiles.</td></tr>
+      <tr><td>Cable</td><td>One standard USB cable (the "printer cable" your keyboard already uses).</td></tr>
+    </table>
+    </div>
+    <p class="dim">Your library and settings live in
+    <code>%APPDATA%\ModxManager\</code> — never next to the .exe, so the app
+    runs fine from a read-only location and survives updates untouched.</p>
+  </section>
+
+  <section>
+    <h2>First-time setup — 3 steps</h2>
+    <ol>
+      <li><strong>Connect the keyboard</strong> to the PC with the USB cable and power it on.</li>
+      <li><strong>Pick your keyboard:</strong> launch the app — if the
+      keyboard is the only MIDI device it is picked for you. Otherwise open
+      <em>Tools → Settings</em> and set the MIDI output port to your keyboard
+      (e.g. <em>MODX-1</em>) and the MIDI channel (1 by default).</li>
+      <li><strong>Add a song</strong>, type its Live Set Page and Slot, and
+      press <em>Try it</em> — the keyboard switches. The bottom-right corner
+      always shows whether the keyboard is connected.</li>
+    </ol>
+    <h3>Three settings on the keyboard itself</h3>
+    <p>On the MODX, in <em>Utility → Settings → MIDI I/O</em>: set
+    <strong>MIDI IN/OUT to USB</strong> and the MIDI channel to match the
+    app. In <em>Utility → Settings → <strong>Advanced</strong></em>: make sure
+    <strong>Bank Select</strong> and <strong>Pgm Change</strong> are
+    <strong>ON</strong> (they govern receiving too), and set
+    <strong>MIDI I/O Mode to SINGLE</strong> — in Multi mode, layered and
+    split performances won't switch from the app. That is all changing
+    sounds needs; the optional <em>Two-way MIDI</em> features (Learn, MIDI
+    footswitch, Soundcheck) also need the keyboard to transmit — see the
+    <a href="support.html">support page</a>.</p>
+    <p class="dim">No keyboard handy? The app runs fine without one — you can
+    build your library and read charts anywhere; performance switching just
+    shows a gentle reminder.</p>
+  </section>
+
+  <p style="margin-top:48px"><a class="btn" href="demo.html">See it in action</a>
+     &nbsp; <a class="btn btn--ghost" href="editions.html">Compare editions</a></p>
+
+</main>
+
+<footer class="site-footer">
+  <span>© 2026 Canora · Windows v1.9.0 · Android v2.2.0</span>
+  <nav>
+    <a href="features.html">Features</a>
+    <a href="install.html">Install</a>
+    <a href="demo.html">Demo</a>
+    <a href="editions.html">Editions</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+</footer>
+
+</body>
+</html>

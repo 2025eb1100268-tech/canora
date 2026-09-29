@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — Canora</title>
+<meta name="description" content="Setup help, troubleshooting, and FAQ for Canora.">
+<link rel="icon" href="app.ico">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-dark">
+
+<header class="site-header">
+  <img class="logo-mark" src="img/canora-mark.svg" alt="Canora">
+  <a class="site-title" href="index.html">Canora <span>— for gigging keyboardists</span></a>
+  <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="install.html">Install</a>
+    <a href="demo.html">Demo</a>
+    <a href="editions.html">Editions</a>
+    <a href="support.html" class="active">Support</a>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <p class="eyebrow">Support</p>
+  <h1>Stuck? Let's fix it before soundcheck.</h1>
+  <p class="lead">Most issues are one keyboard setting away from working.
+  Check the FAQ below, and if you're still stuck, email us — MIDI questions
+  welcome, firmware quirks and all.</p>
+</div>
+
+<main class="content">
+
+  <section>
+    <h2>Frequently asked</h2>
+
+    <details class="faq">
+      <summary>Learn doesn't capture anything when I select a performance</summary>
+      <div><em>Learn</em> is one of the optional <strong>Two-way MIDI</strong>
+      features (Settings → Two-way MIDI) — you never need it: type the
+      performance's Live Set Page and Slot and press <strong>Try it</strong>
+      instead. If you do want Learn, the keyboard has to transmit its
+      selection. On the MODX:
+      <em>Utility → Settings → <strong>Advanced</strong></em> → set
+      <strong>Bank Select</strong> and <strong>Pgm Change</strong> to
+      <strong>ON</strong> (they gate transmit and receive for the whole
+      instrument). Also check <em>Utility → Settings → MIDI I/O</em> has
+      <strong>MIDI IN/OUT = USB</strong>. Then use the built-in MIDI monitor
+      (Tools menu) to confirm messages arrive when you switch performances on
+      the panel.
+      <br><br><strong>Monitor shows only CC messages (e.g. CC 16, CC 95) when
+      you switch?</strong> Those are knob/controller resets — the selection
+      itself isn't being transmitted. Two more gates on the MODX: the
+      <strong>MIDI I/O Mode</strong> must be <strong>Single</strong> (or
+      Hybrid), and <strong>Zone Master</strong> must be <strong>OFF</strong>
+      (Zone Master replaces panel transmit with per-zone settings — Learn
+      stays silent unless the zone itself transmits Bank/PC).
+      <br><br><strong>Meanwhile, you're never stuck:</strong> on the keyboard,
+      tap the performance's name → <em>Property</em> to see its MSB/LSB/PC,
+      and type those into the app — the number fields accept direct typing.</div>
+    </details>
+
+    <details class="faq">
+      <summary>Nothing happens when I select a song — is it the app or the cable?</summary>
+      <div>First, look at the connection indicator (Windows: bottom-right of
+      the window; mobile: the keyboard icon in the top bar) and press
+      <strong>Try it</strong> in the song's editor. If that doesn't switch the
+      keyboard either, check the three receive settings on the
+      <a href="install.html">install page</a>. For a deeper check, switch on
+      Two-way MIDI and use <strong>Check connection</strong> (Windows:
+      <em>Tools → Settings → Two-way MIDI → Keyboard link</em>; mobile:
+      <em>Settings → Advanced</em>). It asks the keyboard to identify itself and reports
+      back, which separates the three things that look identical from the
+      stage:
+      <ul>
+        <li><strong>It names your keyboard</strong> → the cable, the ports and
+        two-way MIDI all work. Any remaining problem is the address, so
+        re-enter the song's sound (Try it to check) or use Live Set addressing.</li>
+        <li><strong>No reply</strong> → the keyboard isn't talking back. Check
+        the USB cable (or OTG adapter), that both ports point at the keyboard,
+        and that <em>MIDI IN/OUT</em> is set to <strong>USB</strong>.</li>
+        <li><strong>It names a different brand</strong> → you're on the wrong
+        keyboard profile; change it in Settings.</li>
+      </ul>
+      The check only asks "who are you?" — it never changes a setting on your
+      instrument.</div>
+    </details>
+
+    <details class="faq">
+      <summary>A few specific performances won't switch (often organs) — use Live Set</summary>
+      <div>Some Yamaha performances don't respond at the bank numbers their
+      Property screen shows — it's inconsistent, and organ/tonewheel sounds
+      seem worst affected. Rather than hunt bank numbers, switch the app to
+      the <strong>Yamaha Montage / MODX — Live Set</strong> keyboard profile
+      (Settings → Keyboard):
+      <ol>
+        <li>On the keyboard, put the performances you gig into <strong>Live
+        Set</strong> pages (press LIVE SET, hold a slot to assign the current
+        performance).</li>
+        <li>In the app, each song is then just <strong>Page (1–16)</strong> and
+        <strong>Slot (1–16)</strong> — exactly what you see on the Live Set
+        screen. No bank numbers at all.</li>
+        <li><em>Learn</em> still works: open Live Set on the keyboard and touch
+        the slot.</li>
+      </ol>
+      Live Set is one fixed bank, so this addressing is exact for every
+      performance — and it's how most players organize a gig anyway.</div>
+    </details>
+
+    <details class="faq">
+      <summary>Some performances switch fine, but layered/split ones don't</summary>
+      <div>That's the keyboard's <strong>MIDI I/O Mode</strong>. On the MODX:
+      <em>Utility → Settings → <strong>Advanced</strong></em> (not the MIDI
+      I/O page) → set <strong>MIDI I/O Mode</strong> to
+      <strong>SINGLE</strong>. In <em>Multi</em> mode an incoming Program
+      Change only changes <em>Part 1</em>, so single-part sounds (many pianos)
+      appear to work while layered or split performances (organs, pads,
+      splits) don't switch as a whole. In Single mode the app selects entire
+      performances, every time.
+      <br><br><strong>Don't see "MIDI I/O Mode" on the Advanced page?</strong>
+      Your MODX firmware predates it — the mode selector arrived with
+      <strong>MODX OS v2.0</strong> (current: v2.52, a free update from
+      Yamaha). Check your version under <em>Utility → Other Info</em>, then
+      update via USB stick following
+      <a href="https://usa.yamaha.com/support/updates/modx_os_updater.html">Yamaha's
+      updater page</a>. Back up your user data to USB first.
+      <br><br><strong>MODX M / MONTAGE M note:</strong> same setting, same fix.
+      One extra quirk on the M generation: whole performances live at Bank
+      <strong>MSB 64</strong> (MSB 63 recalls a sound as a single <em>part</em>) —
+      Live Set addressing sidesteps it entirely; if you type bank numbers by
+      hand, use the ones the keyboard shows under
+      <em>performance name → Property</em>.</div>
+    </details>
+
+    <details class="faq">
+      <summary>Windows says the app is unrecognized / SmartScreen warning</summary>
+      <div>Normal for a small independent app that isn't yet code-signed. Click
+      <em>More info → Run anyway</em>. The app is fully offline, makes no
+      network connections, and writes only to its own settings folder
+      (<code>%APPDATA%\ModxManager\</code>).</div>
+    </details>
+
+    <details class="faq">
+      <summary>The program numbers don't match my keyboard</summary>
+      <div>They should — that's a feature. The PC field is shown
+      <strong>1-based to match the Yamaha panel</strong>: if the keyboard shows
+      performance 51, type 51. (MIDI itself counts from 0; the app converts
+      internally.) Easiest of all: use the Live Set profile — just Page and
+      Slot, exactly as the Live Set screen shows them — and press
+      <em>Try it</em> to hear it.</div>
+    </details>
+
+    <details class="faq">
+      <summary>My footswitch advances twice, or also sustains notes</summary>
+      <div>A Bluetooth page-turner needs no setup at all. For a pedal plugged
+      into the keyboard (a Two-way MIDI feature), re-capture it in
+      <em>Settings → Two-way MIDI → Footswitch</em> — the app triggers on
+      the rising edge and debounces, so one physical press is one advance. If
+      you captured the sustain pedal (CC 64) the app warns you, because that
+      pedal also sustains notes; use an assignable switch instead and set it to
+      transmit via <em>Utility → Controller / MIDI I/O</em>.</div>
+    </details>
+
+    <details class="faq">
+      <summary>Does it work without a MIDI connection?</summary>
+      <div>Yes. You can build the library, read and annotate charts, and run
+      setlists with no keyboard attached — performance switching just shows a
+      gentle note instead of failing.</div>
+    </details>
+
+    <details class="faq">
+      <summary>Which keyboards are supported?</summary>
+      <div>Yamaha MODX / MODX+ / Montage are hardware-verified. Generic
+      profiles (Program Change only, or MSB + PC) cover most other keyboards
+      that accept program changes. Dedicated Nord, Korg, Roland and Kurzweil
+      profiles are on the roadmap as hardware verification completes — if you
+      own one and want to help test, we'd love to hear from you.</div>
+    </details>
+
+    <details class="faq">
+      <summary>Where is my data? Can I move it to another computer?</summary>
+      <div>Everything lives in <code>%APPDATA%\ModxManager\</code> —
+      <code>library.json</code> and <code>settings.json</code> — plus your own
+      PDF files wherever you keep them. Copy the folder (and your PDFs) to
+      migrate. Saves are atomic with a <code>.bak</code> backup kept.</div>
+    </details>
+
+    <details class="faq">
+      <summary>Can I use it on Android or iPad?</summary>
+      <div>Android: yes — see the <a href="install.html">install page</a>
+      (Android 7.0+, USB-OTG). It can import your desktop
+      <code>library.json</code> directly. iPad is in progress and coming to the
+      App Store.</div>
+    </details>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email <a href="mailto:manvendramodgil.ai@gmail.com">manvendramodgil.ai@gmail.com</a>
+    with any question — setup, MIDI weirdness, feature requests, or to join
+    the <strong>Band-sync waitlist</strong> and <strong>iPad launch list</strong>.</p>
+    <p class="dim">When reporting a MIDI issue, mention your keyboard model and
+    firmware, and paste what the built-in MIDI monitor shows — that usually
+    solves it in one reply.</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span>© 2026 Canora · v1.1.0</span>
+  <nav>
+    <a href="features.html">Features</a>
+    <a href="install.html">Install</a>
+    <a href="demo.html">Demo</a>
+    <a href="editions.html">Editions</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+</footer>
+
+</body>
+</html>
